@@ -1,0 +1,9 @@
+<mat-tab-group mat-align-tabs="center" *ngIf="!(activeExercise$ | async)">
+    <mat-tab label="New Exercise">
+        <app-new-exercise></app-new-exercise>
+    </mat-tab>
+    <mat-tab label="Past Exercises">
+        <app-past-exercise></app-past-exercise>
+    </mat-tab>
+</mat-tab-group>
+<app-current-exercise *ngIf="activeExercise$ | async"></app-current-exercise>

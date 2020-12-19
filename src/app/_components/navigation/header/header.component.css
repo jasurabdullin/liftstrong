@@ -1,0 +1,23 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover, a:active {
+    color: #ff8a65;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links > li {
+    cursor: pointer;
+}
+
+.sidenav-link {
+    display: inline-block;
+    padding-left: 0.5rem;
+}

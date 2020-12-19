@@ -1,0 +1,11 @@
+mat-form-field {
+    width: 300px;
+}
+
+mat-card {
+    width: 350px;
+}
+
+.signup-section {   
+    min-height: 90vh;
+}

@@ -1,0 +1,52 @@
+<section 
+    class="login-section" 
+    fxLayoutAlign="center center"
+>
+    <mat-card *ngIf="!(isLoading$ | async)" fxFlex.xs="90%" class="signup-form-card">
+        <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title>Login</mat-card-title>
+          </mat-card-header>
+        <mat-card-content>
+            <form 
+                fxLayout="column" 
+                fxLayoutAlign="center center"
+                fxLayoutGap="10px"
+                [formGroup]="loginForm"
+                (ngSubmit)="onSubmit()"
+            >
+                <mat-form-field>
+                    <input 
+                        matInput
+                        type="email"
+                        placeholder="Email"
+                        formControlName="email"
+                    >
+                    <mat-error *ngIf="loginForm.controls.email.hasError('required')">Email field cannot be empty.</mat-error>
+                    <mat-error *ngIf="!loginForm.controls.email.hasError('required')">Invalid email.</mat-error>
+                </mat-form-field>        
+                <mat-form-field>
+                    <input 
+                        matInput
+                        minlength="7"
+                        type="password"
+                        placeholder="Password"
+                        formControlName="password"
+                    >
+                    <mat-error>Password field cannot be empty.</mat-error>
+                </mat-form-field>
+          
+                <button 
+                    mat-raised-button 
+                    color="primary"
+                    type="submit"
+                    [disabled]="loginForm?.invalid"
+                >
+                    Login
+                </button>
+            </form>
+            
+        </mat-card-content>
+        
+    </mat-card>
+    <mat-spinner *ngIf="(isLoading$ | async)"></mat-spinner>
+</section>
